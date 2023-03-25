@@ -1,9 +1,6 @@
 package com.packt.cardatabase;
 
-import com.packt.cardatabase.domain.Car;
-import com.packt.cardatabase.domain.CarRepository;
-import com.packt.cardatabase.domain.Owner;
-import com.packt.cardatabase.domain.OwnerRepository;
+import com.packt.cardatabase.domain.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +19,9 @@ public class CardatabaseApplication implements CommandLineRunner {
 	@Autowired
 	private OwnerRepository ownerRepository;
 
+	@Autowired
+	private UserRepository urepository;
+
 	private static final Logger logger = LoggerFactory.getLogger(CardatabaseApplication.class);
 	 
 	public static void main(String[] args) {
@@ -31,6 +31,10 @@ public class CardatabaseApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+//		urepository.save(new User("user",
+//				"$2a$10$NVM0n8ElaRgg7zWO1CxUdei7vWoPg91Lz2aYavh9.f9q0e4bRadue","USER"));
+//		urepository.save(new User("admin",
+//				"$2a$10$8cjz47bjbR4Mn8GMg9IZx.vyjhLXR/SKKMSZ9.mP9vpMu0ssKi8GW", "ADMIN"));
 //		Owner owner1 = new Owner("John", "Johnson");
 //		Owner owner2 = new Owner("Mary", "Robinson");
 //		ownerRepository.saveAll(Arrays.asList(owner1, owner2));
